@@ -20,7 +20,7 @@ flutter:
 dependencies:
   flutter:
     sdk: flutter
-  flutter_plugin_android_lifecycle: ^2.0.1
+  flutter_plugin_android_lifecycle: ^2.0.17
   google_maps_flutter_platform_interface: ^2.6.0
   stream_transform: ^2.0.0
 
