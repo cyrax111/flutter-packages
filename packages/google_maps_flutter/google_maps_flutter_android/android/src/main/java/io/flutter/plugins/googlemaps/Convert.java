@@ -8,6 +8,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Point;
 import androidx.annotation.VisibleForTesting;
+import io.flutter.FlutterInjector;
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.model.BitmapDescriptor;
@@ -51,16 +52,16 @@ class Convert {
       case "fromAsset":
         if (data.size() == 2) {
           return BitmapDescriptorFactory.fromAsset(
-              io.flutter.view.FlutterMain.getLookupKeyForAsset(toString(data.get(1))));
+                  FlutterInjector.instance().flutterLoader().getLookupKeyForAsset(toString(data.get(1))));
         } else {
           return BitmapDescriptorFactory.fromAsset(
-              io.flutter.view.FlutterMain.getLookupKeyForAsset(
+                  FlutterInjector.instance().flutterLoader().getLookupKeyForAsset(
                   toString(data.get(1)), toString(data.get(2))));
         }
       case "fromAssetImage":
         if (data.size() == 3) {
           return BitmapDescriptorFactory.fromAsset(
-              io.flutter.view.FlutterMain.getLookupKeyForAsset(toString(data.get(1))));
+                  FlutterInjector.instance().flutterLoader().getLookupKeyForAsset(toString(data.get(1))));
         } else {
           throw new IllegalArgumentException(
               "'fromAssetImage' Expected exactly 3 arguments, got: " + data.size());
